@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const KEY = process.env.STRIPE_KEY;
+
 const stripe = require("stripe")(KEY);
 
 router.post("/payment", (req, res) => {
@@ -7,7 +8,7 @@ router.post("/payment", (req, res) => {
     {
       source: req.body.tokenId,
       amount: req.body.amount,
-      currency: "usd",
+      currency: "cad",
     },
     (stripeErr, stripeRes) => {
       if (stripeErr) {
