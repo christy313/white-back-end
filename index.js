@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+
 dotenv.config();
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
@@ -16,6 +17,7 @@ mongoose
   .then(() => console.log("db connection success"))
   .catch((err) => console.log(err));
 
+// app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 
