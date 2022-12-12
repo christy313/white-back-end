@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/christy313/white-back-end",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,7 +19,9 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
-    "nodemon": "^2.0.20",
     "stripe": "^10.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
