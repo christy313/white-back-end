@@ -1,8 +1,6 @@
 const router = require("express").Router();
 const KEY = process.env.STRIPE_KEY;
-
 const stripe = require("stripe")(KEY);
-const BASE_URL = "http://localhost:3000";
 
 router.post("/create-checkout-session", async (req, res) => {
   try {
@@ -21,8 +19,8 @@ router.post("/create-checkout-session", async (req, res) => {
         },
       ],
 
-      success_url: `${BASE_URL}/success`,
-      cancel_url: `${BASE_URL}/cancel`,
+      success_url: `${process.env.BASE_URL}/success`,
+      cancel_url: `${process.env.BASE_URL}/cancel`,
     });
     res.json({ url: session.url });
   } catch (e) {
