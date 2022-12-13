@@ -20,7 +20,7 @@ mongoose
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://allwhite.netlify.app/"],
+    origin: ["https://allwhite.netlify.app"],
   })
 );
 
