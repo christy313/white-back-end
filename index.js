@@ -18,7 +18,11 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://allwhite.netlify.app/"],
+  })
+);
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
